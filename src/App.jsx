@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import './App.css'
-import Card from './components/Card'
+import Cards from './components/Cards'
 import Confetti from 'react-confetti'
 import Gamewon from './components/Gamewon'
 
@@ -52,7 +52,7 @@ function App() {
     useEffect(()=>{
       if(scores.curScore==0 && scores.topScore> scores.curScore)console.log("oops")
     },[scores])
-  const cardElements = cards.map(card=><Card key={card.value} handleClick={markCardClicked} value={card.value} isClicked={card.isClicked}/>)
+
 
   
   return (
@@ -66,7 +66,7 @@ function App() {
       </header>
 
       <div className='card-holder'>
-        {scores.curScore==cards.length ? <Gamewon handleClick={resetGame}/>: cardElements}
+        {scores.curScore==cards.length ? <Gamewon handleClick={resetGame}/>: <Cards handleClick={markCardClicked} cards={cards}/>}
       </div>
     
     </div>

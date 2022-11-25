@@ -49,11 +49,6 @@ function App() {
     }))
     }}
     
-    useEffect(()=>{
-      if(scores.curScore==0 && scores.topScore> scores.curScore)console.log("oops")
-    },[scores])
-
-
   
   return (
     <div className="App">
